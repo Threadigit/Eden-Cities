@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Eden Cities. Borderless living. One membership, global access, $1,000 a month. Opening in five cities across the world.">
+<meta property="og:title" content="Eden Cities">
+<meta property="og:description" content="Borderless living. One membership, global access, $1,000 a month.">
+<meta name="color-scheme" content="light dark">
+<title>Eden Cities</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='12' fill='none' stroke='%23111' stroke-width='2.5'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%23111'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #111111;
+    --muted: #6e6e6e;
+    --line: #e4e4e4;
+    --card: #0a0a0a;
+    --card-text: #f4f4f2;
+    --card-muted: #8a8a86;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0e0e0e;
+      --text: #f0efeb;
+      --muted: #8f8f8a;
+      --line: #262626;
+      --card: #f4f4f2;
+      --card-text: #0a0a0a;
+      --card-muted: #6a6a66;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0e0e0e;
+    --text: #f0efeb;
+    --muted: #8f8f8a;
+    --line: #262626;
+    --card: #f4f4f2;
+    --card-text: #0a0a0a;
+    --card-muted: #6a6a66;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:focus-visible { outline: 2px solid var(--text); outline-offset: 4px; }
+  h1, h2, p, ul { margin: 0; }
+  h1, h2 { font-weight: 500; letter-spacing: -.03em; line-height: 1; text-wrap: balance; }
+
+  .wrap { width: min(1040px, 100%); margin-inline: auto; padding-inline: 24px; }
+
+  .mark { width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; position: relative; flex: none; display: inline-block; }
+  .mark::after { content: ""; position: absolute; width: 5px; height: 5px; border-radius: 50%; background: currentColor; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+  .brand { display: inline-flex; align-items: center; gap: 10px; }
+
+  header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); border-bottom: 1px solid transparent; transition: border-color .2s; }
+  header.scrolled { border-bottom-color: var(--line); }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; font-size: 15px; font-weight: 500; }
+
+  .hero { padding-block: 112px 96px; }
+  .hero h1 { font-size: clamp(56px, 9vw, 120px); }
+  .hero h2 { font-size: clamp(28px, 3.6vw, 44px); font-weight: 400; color: var(--muted); margin-top: 16px; }
+  .hero p { font-size: clamp(19px, 2vw, 22px); max-width: 30em; margin-top: 40px; }
+
+  .spaces { border-top: 1px solid var(--line); padding-block: 56px 96px; }
+  .spaces > p { font-size: clamp(19px, 2.2vw, 24px); max-width: 30em; }
+  .spaces ul { list-style: none; padding: 0; margin-top: 56px; display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 40px; row-gap: 40px; }
+  .spaces li { border-top: 1px solid var(--line); padding-top: 18px; }
+  .spaces li b { display: block; font-size: 20px; font-weight: 500; letter-spacing: -.01em; }
+  .spaces li span { display: block; font-size: 15px; color: var(--muted); margin-top: 6px; }
+
+  .membership { border-top: 1px solid var(--line); padding-block: 96px 112px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: center; }
+  .membership h2 { font-size: clamp(36px, 4.6vw, 56px); }
+  .membership p { font-size: 19px; margin-top: 20px; color: var(--muted); max-width: 22em; }
+  .button {
+    display: inline-block; margin-top: 36px; background: var(--text); color: var(--bg);
+    padding: 16px 28px; border-radius: 999px; font-size: 16px; font-weight: 500; transition: opacity .2s;
+  }
+  .button:hover { opacity: .85; }
+  .note { font-size: 14px; margin-top: 16px; }
+
+  .card {
+    width: 100%; max-width: 460px; aspect-ratio: 1.586; justify-self: end;
+    background: var(--card); color: var(--card-text); border-radius: 16px; padding: 28px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    box-shadow: 0 30px 60px -30px rgba(0,0,0,.5);
+  }
+  .card .top { display: flex; justify-content: space-between; font-size: 15px; font-weight: 500; }
+  .card .top span:last-child { color: var(--card-muted); font-weight: 400; }
+  .card .price { font-size: clamp(32px, 4vw, 44px); font-weight: 500; letter-spacing: -.03em; line-height: 1; }
+  .card .price small { font-size: 15px; font-weight: 400; letter-spacing: 0; color: var(--card-muted); margin-left: 10px; }
+  .card .bottom { display: flex; justify-content: space-between; font-size: 13px; color: var(--card-muted); }
+
+  footer { border-top: 1px solid var(--line); }
+  footer .wrap { padding-block: 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 14px; color: var(--muted); }
+
+  @media (max-width: 800px) {
+    .hero { padding-block: 72px 64px; }
+    .membership { grid-template-columns: 1fr; gap: 32px; padding-block: 56px 72px; }
+    .spaces { padding-block: 56px 72px; }
+    .spaces ul { grid-template-columns: 1fr 1fr; column-gap: 24px; row-gap: 28px; margin-top: 40px; }
+    .card { justify-self: start; }
+  }
+  @media (max-width: 480px) { .spaces ul { grid-template-columns: 1fr; } }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  img { max-width: 100%; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+  <a class="brand" href="#top" aria-label="Eden Cities home"><span class="mark" aria-hidden="true"></span>Eden Cities</a>
+  <a href="mailto:tolu@adetuyi.com?subject=Eden%20Cities%20waitlist">Join the waitlist</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="wrap hero">
+    <h1>Borderless living.</h1>
+    <h2>Where wisdom is cultivated.</h2>
+    <p>Like a garden made to nurture what is planted in it, every Eden city is built to nurture your knowledge into wisdom. Wisdom practical enough to be experienced by your world.</p>
+  </section>
+
+  <section class="wrap spaces">
+    <p>Eden is one estate with many addresses. Six spaces on every grounds, built to one standard. Wherever you land, you already know your way around.</p>
+    <ul>
+      <li><b>Museum</b><span>Collections, exhibitions, conversation.</span></li>
+      <li><b>Studios</b><span>Paint, clay, print, sound.</span></li>
+      <li><b>Wellness center</b><span>Movement, breath, heat, cold.</span></li>
+      <li><b>Creative workspaces</b><span>Private rooms for the work that matters.</span></li>
+      <li><b>Vocational school</b><span>A working hardware floor.</span></li>
+      <li><b>Technology hub</b><span>Tools, compute, people.</span></li>
+    </ul>
+  </section>
+
+  <section id="membership" class="wrap membership">
+    <div>
+      <h2>One membership.<br>Global access.</h2>
+      <p>$1,000 a month. Opening in five cities across the world, growing from there. The same experience in each one.</p>
+      <a class="button" href="mailto:tolu@adetuyi.com?subject=Eden%20Cities%20waitlist&body=I%20would%20like%20to%20join%20the%20Eden%20Cities%20waitlist.">Join the waitlist</a>
+      <p class="note">Membership is by invitation. Send an email now.</p>
+    </div>
+    <div class="card" aria-label="Eden membership card">
+      <div class="top"><span class="brand"><span class="mark" aria-hidden="true"></span>Eden Cities</span><span>Global</span></div>
+      <div class="price">$1,000<small>per month</small></div>
+      <div class="bottom"><span>Member</span><span>Valid in every Eden city</span></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="brand"><span class="mark" aria-hidden="true"></span>Eden Cities</span>
+    <span>Experiences Designed to Enrich and Nourish.</span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var header = document.querySelector('header');
+    function update() { header.classList.toggle('scrolled', window.scrollY > 4); }
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  })();
+</script>
+</body>
+</html>
