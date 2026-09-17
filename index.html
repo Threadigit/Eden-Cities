@@ -80,6 +80,11 @@
   .spaces li b { display: block; font-size: 20px; font-weight: 500; letter-spacing: -.01em; }
   .spaces li span { display: block; font-size: 15px; color: var(--muted); margin-top: 6px; }
 
+  .people { border-top: 1px solid var(--line); padding-block: 96px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: start; }
+  .people h2 { font-size: clamp(36px, 4.6vw, 56px); }
+  .people p { font-size: clamp(19px, 2.2vw, 24px); max-width: 26em; }
+  .people p + p { margin-top: 20px; color: var(--muted); font-size: 19px; }
+
   .membership { border-top: 1px solid var(--line); padding-block: 96px 112px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: center; }
   .membership h2 { font-size: clamp(36px, 4.6vw, 56px); }
   .membership p { font-size: 19px; margin-top: 20px; color: var(--muted); max-width: 22em; }
@@ -108,6 +113,7 @@
   @media (max-width: 800px) {
     .hero { padding-block: 72px 64px; }
     .membership { grid-template-columns: 1fr; gap: 32px; padding-block: 56px 72px; }
+    .people { grid-template-columns: 1fr; gap: 24px; padding-block: 56px 72px; }
     .spaces { padding-block: 56px 72px; }
     .spaces ul { grid-template-columns: 1fr 1fr; column-gap: 24px; row-gap: 28px; margin-top: 40px; }
     .card { justify-self: start; }
@@ -142,6 +148,14 @@
       <li><b>Vocational school</b><span>A working hardware floor.</span></li>
       <li><b>Technology hub</b><span>Tools, compute, people.</span></li>
     </ul>
+  </section>
+
+  <section class="wrap people">
+    <h2>Two generations.<br>One table.</h2>
+    <div>
+      <p>Eden is where forward-thinking leaders meet forward-thinking young people who are already making an impact.</p>
+      <p>Experience meets energy. Both leave with more than they came with.</p>
+    </div>
   </section>
 
   <section id="membership" class="wrap membership">
